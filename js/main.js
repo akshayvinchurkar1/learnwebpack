@@ -1,4 +1,5 @@
 import styles from '../css/style.css';
+var $ = require('jquery');
 
 // Sticky nav
 const nav = document.querySelector('nav');
@@ -15,11 +16,13 @@ window.onscroll = function() {
 }
 
 // night mode
-const night = document.querySelector('.night-mode');
-const body = document.querySelector('body');
+const night = $('.night-mode');
+const body = $('body');
 
 function toggleClass() {
 	body.classList.toggle('night');
 }
 
-night.addEventListener('click', toggleClass);
+$('.night-mode').click(function() {
+    toggleClass();
+});
